@@ -20,8 +20,6 @@ sub.call("chmod 755 voxelyze", shell=True)
 SEED = int(sys.argv[1])
 MAX_TIME = float(sys.argv[2])
 
-UPDATE_SURVIVORS_AGE = False
-
 IND_SIZE = (8, 8, 7)
 MIN_PERCENT_FULL = 0.25
 
@@ -124,8 +122,7 @@ if not os.path.isfile("./" + RUN_DIR + "/pickledPops/Gen_0.pickle"):
     my_optimization.run(max_hours_runtime=MAX_TIME, max_gens=MAX_GENS, num_random_individuals=NUM_RANDOM_INDS,
                         directory=RUN_DIR, name=RUN_NAME, max_eval_time=MAX_EVAL_TIME,
                         time_to_try_again=TIME_TO_TRY_AGAIN, checkpoint_every=CHECKPOINT_EVERY,
-                        save_vxa_every=SAVE_VXA_EVERY, save_lineages=SAVE_LINEAGES,
-                        update_survivors_age=UPDATE_SURVIVORS_AGE)
+                        save_vxa_every=SAVE_VXA_EVERY, save_lineages=SAVE_LINEAGES)
 
 else:
     continue_from_checkpoint(directory=RUN_DIR, additional_gens=EXTRA_GENS, max_hours_runtime=MAX_TIME,
