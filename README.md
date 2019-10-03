@@ -1,11 +1,3 @@
-A scalable pipeline for designing reconfigurable organisms.
---------------------
-[Sam Kriegman](https://scholar.google.com/citations?user=DCIwaLwAAAAJ), 
-[Douglas Blackiston](https://scholar.google.com/citations?user=d2Jd2jsAAAAJ), 
-[Michael Levin](https://scholar.google.com/citations?user=luouyakAAAAJ), 
-[Josh Bongard](https://scholar.google.com/citations?user=Dj-kPasAAAAJ).<br>
-
-
 Installation
 ------------
 
