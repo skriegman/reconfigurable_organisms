@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PhysicsDialog</class>
+ <widget class="QWidget" name="PhysicsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>263</width>
+    <height>708</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_6">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QPushButton" name="PauseButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Pause</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ResetButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="RecordButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="VoxCad.qrc">
+         <normaloff>:/Icons/Icons/Record.png</normaloff>:/Icons/Icons/Record.png</iconset>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_16">
+     <item>
+      <widget class="QCheckBox" name="UseEquilibriumCheck">
+       <property name="toolTip">
+        <string>Accelerates the simulation to find the equilibrium position quickly</string>
+       </property>
+       <property name="text">
+        <string>Find Equilibrium</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_15">
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Percent of optimal timestep to run at. [0-1.0+]
+Greater values speed up the simulation, but &gt;1.0
+can be unstable.</string>
+       </property>
+       <property name="text">
+        <string>Stop condition</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="StopSelectCombo">
+       <property name="toolTip">
+        <string>Sets a condition for auto-stopping the simulation</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="StopValueEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>41</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>41</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>The value of selected auto-stopping condition to trigger a stop.</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="StopValueLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Percent of optimal timestep to run at. [0-1.0+]
+Greater values speed up the simulation, but &gt;1.0
+can be unstable.</string>
+       </property>
+       <property name="text">
+        <string>Sec</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QSlider" name="dtSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Percent of optimal timestep to run at. [0-1.0+]
+Greater values speed up the simulation, but &gt;1.0
+can be unstable.</string>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Percent of optimal timestep to run at. [0-1.0+]
+Greater values speed up the simulation, but &gt;1.0
+can be unstable.</string>
+       </property>
+       <property name="text">
+        <string>timestep (%  optimal dt)</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="dtEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>41</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>41</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>Percent of optimal timestep to run at. [0-1.0+]
+Greater values speed up the simulation, but &gt;1.0
+can be unstable.</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <widget class="QSlider" name="GNDDampSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Damping ratio relative to ground [0-0.1+].
+0 represents a vacuum, larger values
+represent a more viscous fluid environment.</string>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_9">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Damping ratio relative to ground [0-0.1+].
+0 represents a vacuum, larger values
+represent a more viscous fluid environment.</string>
+       </property>
+       <property name="text">
+        <string>Ground damp ratio (z)</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+       <property name="indent">
+        <number>-2</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="GNDDampEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>41</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>41</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Damping ratio relative to ground [0-0.1+].
+0 represents a vacuum, larger values
+represent a more viscous fluid environment.</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="UseSelfColCheck">
+     <property name="toolTip">
+      <string>Prevents self penetration when enabled.</string>
+     </property>
+     <property name="text">
+      <string>Enable Self Collision</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <widget class="QSlider" name="ColDampSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Damping ratio of collisions [0-2+].
+Low values make elastic (bouncy) collisions, higher values
+make inelastic (dead) collisions. 1.0 is critically damped.</string>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_7">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Damping ratio of collisions [0-2+].
+Low values make elastic (bouncy) collisions, higher values
+make inelastic (dead) collisions. 1.0 is critically damped.</string>
+       </property>
+       <property name="text">
+        <string>Collision damp ratio (z)</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+       <property name="indent">
+        <number>-2</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="ColDampEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>41</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>41</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Damping ratio of collisions [0-2+].
+Low values make elastic (bouncy) collisions, higher values
+make inelastic (dead) collisions. 1.0 is critically damped.</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="PhysTabWidget">
+     <property name="toolTip">
+      <string>Options</string>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::North</enum>
+     </property>
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="View">
+      <attribute name="title">
+       <string>View</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_11">
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>3</number>
+       </property>
+       <property name="bottomMargin">
+        <number>3</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="DisplayBox">
+         <property name="title">
+          <string>Display</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QRadioButton" name="DispDisableRadio">
+            <property name="text">
+             <string>Disable</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="DispVoxelsRadio">
+            <property name="text">
+             <string>Voxels</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="DispConnRadio">
+            <property name="text">
+             <string>Connections</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="ViewOptionsGroup">
+         <property name="title">
+          <string>View Options</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QRadioButton" name="ViewDiscreteRadio">
+              <property name="text">
+               <string>Discrete</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="ViewDeformedRadio">
+              <property name="text">
+               <string>Deformed</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="ViewSmoothRadio">
+              <property name="text">
+               <string>Smooth</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QCheckBox" name="ForcesCheck">
+              <property name="toolTip">
+               <string>Internal forces (currently disabled)</string>
+              </property>
+              <property name="text">
+               <string>Forces</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="LocalCoordCheck">
+              <property name="toolTip">
+               <string>Origin and axes of each voxel.</string>
+              </property>
+              <property name="text">
+               <string>Local Coords</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="ColorGroup">
+         <property name="title">
+          <string>Color</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="QRadioButton" name="TypeRadio">
+              <property name="toolTip">
+               <string>Forward model</string>
+              </property>
+              <property name="text">
+               <string>Prediction error</string>
+              </property>
+             </widget>
+            </item>
+
+            <item>
+             <widget class="QRadioButton" name="StateRadio">
+              <property name="toolTip">
+               <string>Phase offset</string>
+              </property>
+              <property name="text">
+               <string>Phase offset</string>
+              </property>
+             </widget>
+            </item>
+
+            <item>
+             <widget class="QRadioButton" name="StiffnessRadio">
+              <property name="toolTip">
+               <string>Voxel stiffness</string>
+              </property>
+              <property name="text">
+               <string>Stiffness</string>
+              </property>
+             </widget>
+            </item>
+
+
+            <item>
+             <widget class="QRadioButton" name="DisplacementRadio">
+              <property name="toolTip">
+               <string>Forward model Predition</string>
+              </property>
+              <property name="text">
+               <string>Predicted</string>
+              </property>
+             </widget>
+            </item>
+
+            <item>
+             <widget class="QRadioButton" name="StrainERadio">
+              <property name="toolTip">
+               <string>Light intensity</string>
+              </property>
+              <property name="text">
+               <string>Light intensity</string>
+              </property>
+             </widget>
+            </item>
+
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <property name="spacing">
+             <number>1</number>
+            </property>
+
+            <item>
+             <widget class="QRadioButton" name="KineticERadio">
+              <property name="toolTip">
+               <string>Voltage</string>
+              </property>
+              <property name="text">
+               <string>Voltage</string>
+              </property>
+             </widget>
+            </item>
+
+            <item>
+             <widget class="QRadioButton" name="StressRadio">
+              <property name="toolTip">
+               <string>Internal material stress</string>
+              </property>
+              <property name="text">
+               <string>Engineering
+Stress</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="StrainRadio">
+              <property name="toolTip">
+               <string>Internal material strain</string>
+              </property>
+              <property name="text">
+               <string>Engineering
+Strain</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="PressureRadio">
+              <property name="text">
+               <string>Pressure</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="CoMCheck">
+         <property name="text">
+          <string>Lock view to center of mass</string>
+         </property>
+        </widget>
+       </item>
+
+
+
+
+       <item>
+        <widget class="QGroupBox" name="PlotForcesGroup">
+         <property name="title">
+          <string>Plot forces</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_140">
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_90">
+            <item>
+             <widget class="QRadioButton" name="PlotDragRadio">
+              <property name="text">
+               <string>Drag forces</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="PlotSpeedsRadio">
+              <property name="text">
+               <string>Projected speeds</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="PlotNormalsRadio">
+              <property name="text">
+               <string>Surface normals</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_70">
+            <item>
+             <widget class="QCheckBox" name="PlotForcesCheck">
+              <property name="toolTip">
+               <string>Plot forces?</string>
+              </property>
+              <property name="text">
+               <string>Plot forces?</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+          <widget class="QLineEdit" name="ForcesScalingEdit">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>41</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>41</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Scaling factor of plotted vectors</string>
+           </property>
+          </widget>
+          </item>          
+         </layout>
+        </widget>
+       </item>
+
+
+
+
+
+
+
+
+
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Environment">
+      <attribute name="title">
+       <string>Environment</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>3</number>
+       </property>
+       <property name="bottomMargin">
+        <number>3</number>
+       </property>
+       <item>
+        <widget class="QCheckBox" name="UseTempCheck">
+         <property name="toolTip">
+          <string>Enables temperature changes.
+Affects the size of each voxel according to its CTE.</string>
+         </property>
+         <property name="text">
+          <string>Enable Temperature</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QSlider" name="TempSlider">
+           <property name="toolTip">
+            <string>Current environment temperature.
+Base (no expansion) is 25°.</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Temp (°C)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="TempEdit">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>41</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>41</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="VaryTempCheck">
+         <property name="toolTip">
+          <string>Periodically varies the environment temperature when enabled.</string>
+         </property>
+         <property name="text">
+          <string>Vary Temperature</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QSlider" name="TempPerSlider">
+           <property name="toolTip">
+            <string>Period of temperature variation in environment.</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Period (sec)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="TempPerEdit">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>41</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>41</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="UseGravCheck">
+         <property name="toolTip">
+          <string>Enables gravitational acceleration.</string>
+         </property>
+         <property name="text">
+          <string>Enable Gravity</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QSlider" name="GravSlider">
+           <property name="toolTip">
+            <string>Gravitational acceleration (9.81 for earth).</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Grav (m/s²)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="GravEdit">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>41</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>41</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="UseFloorCheck">
+         <property name="toolTip">
+          <string>Enables a flat floor.</string>
+         </property>
+         <property name="text">
+          <string>Enable Floor</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="UseFloorSlopeCheck">
+         <property name="toolTip">
+          <string>Enables floor slope</string>
+         </property>
+         <property name="text">
+          <string>Enable floor slope</string>
+         </property>
+        </widget>
+       </item>       
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>191</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Trace">
+      <attribute name="title">
+       <string>Trace</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QComboBox" name="VariableCombo"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Plot Variable</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QComboBox" name="DirectionCombo"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Plot Direction</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="LogEachCheck">
+           <property name="text">
+            <string>Log Every</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="SaveDataButton">
+           <property name="text">
+            <string>Save Data</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Output">
+      <attribute name="title">
+       <string>Output</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QTextEdit" name="OutText"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Other">
+      <attribute name="title">
+       <string>Other</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_12">
+       <property name="spacing">
+        <number>1</number>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>3</number>
+       </property>
+       <property name="rightMargin">
+        <number>6</number>
+       </property>
+       <property name="bottomMargin">
+        <number>3</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QSlider" name="BondDampSlider">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Bulk material damping. [0-1.0]
+Small values are more jiggly. 0.0 represents no damping
+and is unstable, 1.0 is critical damping.</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Bulk material damping. [0-1.0]
+Small values are more jiggly. 0.0 represents no damping
+and is unstable, 1.0 is critical damping.</string>
+           </property>
+           <property name="text">
+            <string>Bulk damp ratio (z)</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+           <property name="indent">
+            <number>-2</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="BondDampEdit">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>41</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>41</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Bulk material damping. [0-1.0]
+Small values are more jiggly. 0.0 represents no damping
+and is unstable, 1.0 is critical damping.</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="UseMaxVelLimitCheck">
+         <property name="toolTip">
+          <string>Enforces a maximum velocity when enabled (rarely used).
+Useful for highly unstable scenarios.</string>
+         </property>
+         <property name="text">
+          <string>Enable Velocity Limit</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <widget class="QSlider" name="MaxVelLimitSlider">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>120</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Maximum voxel velocity.</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Maximum Voxel Velocity</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+           <property name="indent">
+            <number>-2</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="UseVolumeEffectsCheck">
+         <property name="text">
+          <string>Enable Volume Effects</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>363</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="VoxCad.qrc"/>
+ </resources>
+ <connections/>
+</ui>

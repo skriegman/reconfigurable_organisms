@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Voxelyze", "Voxelyze.vcxproj", "{A49042E6-9ADA-451E-AC77-1817059A20DE}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug+OGL|Win32 = Debug+OGL|Win32
+		Release|Win32 = Release|Win32
+		Release+OGL|Win32 = Release+OGL|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A49042E6-9ADA-451E-AC77-1817059A20DE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A49042E6-9ADA-451E-AC77-1817059A20DE}.Debug|Win32.Build.0 = Debug|Win32
+		{A49042E6-9ADA-451E-AC77-1817059A20DE}.Debug+OGL|Win32.ActiveCfg = Debug+OGL|Win32
+		{A49042E6-9ADA-451E-AC77-1817059A20DE}.Debug+OGL|Win32.Build.0 = Debug+OGL|Win32
+		{A49042E6-9ADA-451E-AC77-1817059A20DE}.Release|Win32.ActiveCfg = Release|Win32
+		{A49042E6-9ADA-451E-AC77-1817059A20DE}.Release|Win32.Build.0 = Release|Win32
+		{A49042E6-9ADA-451E-AC77-1817059A20DE}.Release+OGL|Win32.ActiveCfg = Release+OGL|Win32
+		{A49042E6-9ADA-451E-AC77-1817059A20DE}.Release+OGL|Win32.Build.0 = Release+OGL|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

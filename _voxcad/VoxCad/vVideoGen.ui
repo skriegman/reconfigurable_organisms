@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VideoDialog</class>
+ <widget class="QWidget" name="VideoDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>308</width>
+    <height>444</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Video Capture Settings</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_7">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Output Folder</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLineEdit" name="OutputFolderEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>Output folder for jpg frames. Use ffmpeg, virtualDub, etc. to convert to movie file.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="SelectFolderButton">
+        <property name="toolTip">
+         <string>Output folder for jpg frames. Use ffmpeg, virtualDub, etc. to convert to movie file.</string>
+        </property>
+        <property name="text">
+         <string>Select</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Resolution</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLineEdit" name="WidthPixEdit">
+          <property name="toolTip">
+           <string>Video width</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Width (pixels)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="HeightPixEdit">
+          <property name="toolTip">
+           <string>Video height</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Height (pixels)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QRadioButton" name="r320x240Radio">
+          <property name="text">
+           <string>320x240</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QRadioButton" name="r800x600Radio">
+          <property name="text">
+           <string>800x600</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QRadioButton" name="r1280x720Radio">
+          <property name="text">
+           <string>1280x720</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QRadioButton" name="r640x480Radio">
+          <property name="text">
+           <string>640x480</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QRadioButton" name="r1024x768Radio">
+          <property name="text">
+           <string>1024x768</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QRadioButton" name="r1920x1080Radio">
+          <property name="text">
+           <string>1920x1080</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="title">
+      <string>Video speed</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QRadioButton" name="vsDisplayTimeRadio">
+          <property name="toolTip">
+           <string>Records video at the speed the simulation is displayed on your screen.</string>
+          </property>
+          <property name="text">
+           <string>Display time</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="vsSimTimeRadio">
+          <property name="toolTip">
+           <string>Records video at the speed of the simulation.
+One second of simulation time is one second of
+video. Use &quot;Output speed factor&quot; to vary this ratio.</string>
+          </property>
+          <property name="text">
+           <string>Simulation time</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="vsEveryFrameRadio">
+          <property name="toolTip">
+           <string>The video contains a frame from every single timestep of the simulation.</string>
+          </property>
+          <property name="text">
+           <string>Every frame</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLineEdit" name="OutputFpsEdit">
+          <property name="toolTip">
+           <string>Desired framerate of output video in frames per second. [Usually 30 or so]</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="toolTip">
+           <string>Desired framerate of output video in frames per second. [Usually 30 or so]</string>
+          </property>
+          <property name="text">
+           <string>Output fps</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="OutputSpeedFactorEdit">
+          <property name="toolTip">
+           <string>Speed up or slow down output video. [0.001-1000.0]
+2.0 is double speed, 0.5 is half speed.</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="toolTip">
+           <string>Speed up or slow down output video. [0.001-1000.0]
+2.0 is double speed, 0.5 is half speed.</string>
+          </property>
+          <property name="text">
+           <string>Output
+speed factor</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>AutoStop</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QCheckBox" name="AutoStopEnabledCheck">
+        <property name="toolTip">
+         <string>Enables auto-stopping of the simulation.</string>
+        </property>
+        <property name="text">
+         <string>Enabled</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QRadioButton" name="TimeStepsRadio">
+            <property name="toolTip">
+             <string>Stops the simulation after a fixed number of timesteps.</string>
+            </property>
+            <property name="text">
+             <string>Time steps</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="SimTimeRadio">
+            <property name="toolTip">
+             <string>Stops the simulation after a fixed amount of simulation time in seconds.</string>
+            </property>
+            <property name="text">
+             <string>Simulation time</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="TempCycleRadio">
+            <property name="toolTip">
+             <string>Stops the simulation after a fixed number of temperature variation cycles.</string>
+            </property>
+            <property name="text">
+             <string>Temperature cycles</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLineEdit" name="TimeStepsEdit">
+            <property name="toolTip">
+             <string>Stops the simulation after a fixed number of timesteps.</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="SimTimeEdit">
+            <property name="toolTip">
+             <string>Stops the simulation after a fixed amount of simulation time in seconds.</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="TempCycleEdit">
+            <property name="toolTip">
+             <string>Stops the simulation after a fixed number of temperature variation cycles.</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="toolTip">
+             <string>Stops the simulation after a fixed number of timesteps.</string>
+            </property>
+            <property name="text">
+             <string># steps</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="toolTip">
+             <string>Stops the simulation after a fixed amount of simulation time in seconds.</string>
+            </property>
+            <property name="text">
+             <string>sec</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="toolTip">
+             <string>Stops the simulation after a fixed number of temperature variation cycles.</string>
+            </property>
+            <property name="text">
+             <string># cyc</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="ResetSimCheck">
+       <property name="toolTip">
+        <string>Resets the simulation upon &quot;Begin&quot; when enabled.</string>
+       </property>
+       <property name="text">
+        <string>Reset Sim</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="BeginButton">
+       <property name="toolTip">
+        <string>Begin recording.</string>
+       </property>
+       <property name="text">
+        <string>Begin</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="CancelButton">
+       <property name="toolTip">
+        <string>Cancels the record operation.</string>
+       </property>
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

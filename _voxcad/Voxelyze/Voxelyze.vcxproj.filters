@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Mesh">
+      <UniqueIdentifier>{3714d7bd-3bd6-430f-bc52-f665bdca45ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sim">
+      <UniqueIdentifier>{d009c4b8-2aef-4105-aaa4-294306fc7cda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{7b2657fc-6efb-4ebf-825b-ae117e33a16b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Mesh">
+      <UniqueIdentifier>{532de118-b7d0-48f5-bf1e-ae88e3159111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sim">
+      <UniqueIdentifier>{57f466b8-4431-426f-8e29-b01f1d05de58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{10429c83-4d7d-4d64-93c6-f89ce82212be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VX_Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VX_MeshUtil.cpp">
+      <Filter>Source Files\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="VX_Environment.cpp">
+      <Filter>Source Files\Sim</Filter>
+    </ClCompile>
+    <ClCompile Include="VX_FEA.cpp">
+      <Filter>Source Files\Sim</Filter>
+    </ClCompile>
+    <ClCompile Include="VX_Sim.cpp">
+      <Filter>Source Files\Sim</Filter>
+    </ClCompile>
+    <ClCompile Include="VXS_Bond.cpp">
+      <Filter>Source Files\Sim</Filter>
+    </ClCompile>
+    <ClCompile Include="VXS_Voxel.cpp">
+      <Filter>Source Files\Sim</Filter>
+    </ClCompile>
+    <ClCompile Include="VX_FRegion.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Mesh.cpp">
+      <Filter>Source Files\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\XML_Rip.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\GL_Utils.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\tinyxml.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\tinyxmlerror.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\tinyxmlparser.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VX_Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VX_MeshUtil.h">
+      <Filter>Header Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="VX_Environment.h">
+      <Filter>Header Files\Sim</Filter>
+    </ClInclude>
+    <ClInclude Include="VX_FEA.h">
+      <Filter>Header Files\Sim</Filter>
+    </ClInclude>
+    <ClInclude Include="VX_Sim.h">
+      <Filter>Header Files\Sim</Filter>
+    </ClInclude>
+    <ClInclude Include="VXS_Bond.h">
+      <Filter>Header Files\Sim</Filter>
+    </ClInclude>
+    <ClInclude Include="VXS_Voxel.h">
+      <Filter>Header Files\Sim</Filter>
+    </ClInclude>
+    <ClInclude Include="VX_FRegion.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Mesh.h">
+      <Filter>Header Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\XML_Rip.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\GL_Utils.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\tinyxml.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Vec3D.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

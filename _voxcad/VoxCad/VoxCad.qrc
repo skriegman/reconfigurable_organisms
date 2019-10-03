@@ -1,0 +1,39 @@
+<RCC>
+  <qresource prefix="/VoxCad">
+    <file>VoxCad.ico</file>
+  </qresource>
+  <qresource prefix="/Icons">
+    <file>Icons/Record.png</file>
+    <file>Icons/Bucket.png</file>
+    <file>Icons/Tensile.png</file>
+    <file>Icons/3DBrush.png</file>
+    <file>Icons/Sandbox.png</file>
+    <file>Icons/Analyze.png</file>
+    <file>Icons/Aux_View.png</file>
+    <file>Icons/BCs.png</file>
+    <file>Icons/Copy.png</file>
+    <file>Icons/Cut.png</file>
+    <file>Icons/EditLayer.png</file>
+    <file>Icons/Ellipse.png</file>
+    <file>Icons/Info.png</file>
+    <file>Icons/LayerBack.png</file>
+    <file>Icons/LayerForward.png</file>
+    <file>Icons/Material.png</file>
+    <file>Icons/New.png</file>
+    <file>Icons/Open.png</file>
+    <file>Icons/Paste.png</file>
+    <file>Icons/Pencil.png</file>
+    <file>Icons/Rectangle.png</file>
+    <file>Icons/Save.png</file>
+    <file>Icons/Section.png</file>
+    <file>Icons/ViewBack.png</file>
+    <file>Icons/ViewBottom.png</file>
+    <file>Icons/ViewFront.png</file>
+    <file>Icons/ViewLeft.png</file>
+    <file>Icons/ViewPerspective.png</file>
+    <file>Icons/ViewRight.png</file>
+    <file>Icons/ViewTop.png</file>
+    <file>Icons/Workspace.png</file>
+    <file>Icons/ZoomExtents2.png</file>
+  </qresource>
+</RCC>
