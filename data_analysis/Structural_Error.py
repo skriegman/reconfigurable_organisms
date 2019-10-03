@@ -124,11 +124,11 @@ for vivo_img_num, vivo_fname in enumerate(glob("imaging/*tif")):
     kmeans = KMeans(n_clusters=3, random_state=0).fit(X)
     vivo_base = kmeans.predict(X).reshape(vivo_shape[:-1])
 
-    for elev in range(-180+30*4, 180-30*4, 15):
+    for elev in range(-40, 60, 10):
 
-        for angle in range(0, 360, 10):
+        for angle in range(-120, -60, 10):
 
-            for rotation in range(0, 30, 15):
+            for rotation in range(0, 30, 10):
 
                 fig = plt.figure(figsize=(1, 1))
                 ax = get_real_plot(fig, 1, rows=1, cols=1)
@@ -221,17 +221,23 @@ for vivo_img_num, vivo_fname in enumerate(glob("imaging/*tif")):
 #
 # dist = [0, 0, 0, 0]
 #
-# elev = [-30, -30, -30, -15]
-# angle = [240, 280, 0, 60]
-# rot = [15, 15, 0, 0]
+# elev = [-30, 40, -40, -40]
+# angle = [-120, -90, -100, -100]
+# rot = [10, 10, 20, 20]
+#
+# error_when_centered_and_at_orig_res = [20.00, 18.35, 18.86, 18.86]
+# error_for_organism_with_diameter_850_micros = [x*850/float(RES) for x in error_when_centered_and_at_orig_res]
+#
+# print "errors: ", error_for_organism_with_diameter_850_micros
+# print "% errors: ", [x/850.0 for x in error_for_organism_with_diameter_850_micros]
 #
 # dpi = [750, 750, 750, 750]
-# top_adj = [-40, -20, 10, -70]
+# top_adj = [-50, -10, 20, -80]
 # right_adj = [40, 60, -60, 40]
 #
-# convert_dict = {0: {0: 1, 1: 2, 2: 0},
-#                 1: {0: 1, 1: 0, 2: 2},
-#                 2: {0: 1, 1: 0, 2: 2},
+# convert_dict = {0: {0: 0, 1: 2, 2: 1},
+#                 1: {0: 0, 1: 2, 2: 1},
+#                 2: {0: 0, 1: 1, 2: 2},
 #                 3: {0: 0, 1: 1, 2: 2}}
 #
 # for n, fname in enumerate(glob("imaging/*tif")):
@@ -287,15 +293,18 @@ for vivo_img_num, vivo_fname in enumerate(glob("imaging/*tif")):
 #     padding = padding[:2]
 #     padded_silico_base = np.pad(silico_base, padding, 'edge')
 #
-#     vivo_t1 = vivo_base == 1
-#     silico_t1 = padded_silico_base == 1
-#     vivo_t2 = vivo_base == 2
-#     silico_t2 = padded_silico_base == 2
-#
-#     d1 = hausdorff_dist(vivo_t1, silico_t1)
-#     d2 = hausdorff_dist(vivo_t2, silico_t2)
-#     dist[n] = max(d1, d2) * 750 / 850.  # adjust pixel resolution (750x750) to organism size (avg is 850)
+#     # vivo_t1 = vivo_base == 1
+#     # silico_t1 = padded_silico_base == 1
+#     # vivo_t2 = vivo_base == 2
+#     # silico_t2 = padded_silico_base == 2
+#     #
+#     # d1 = hausdorff_dist(vivo_t1, silico_t1)
+#     # d2 = hausdorff_dist(vivo_t2, silico_t2)
+#     # dist[n] = max(d1, d2) * 750 / 850.  # adjust pixel resolution (750x750) to organism size (avg is 850)
 #     # print dist[n]
+#
+#     # use the error from the autocropped version
+#     dist[n] = error_for_organism_with_diameter_850_micros[n]
 #
 #     axes[2, n].imshow(padded_silico_base)  # padded_silico_rgb_img)
 #     # axes[3, n].imshow(padded_silico_base)
@@ -303,7 +312,7 @@ for vivo_img_num, vivo_fname in enumerate(glob("imaging/*tif")):
 #     # axes[3, n].text(0, 0, "match = {} $\mu$m".format(round(dist[n], 2)), fontsize=12, color="white",
 #     #                 verticalalignment='bottom', horizontalalignment='center')
 #
-#     axes[2, n].set_xlabel("error = {} $\mu$m".format(int(dist[n]*0.5)), fontsize=12)
+#     axes[2, n].set_xlabel("error = {} $\mu$m".format(int(dist[n])), fontsize=12)
 #
 # for n in range(3):
 #     axes[n, 0].set_ylabel(ylabel[n], fontsize=12)
