@@ -1373,6 +1373,7 @@ bool CVX_Sim::UpdateStats(std::string* pRetMessage) //updates simulation state (
         SS.CMTraceTime.clear();
         SS.CMTrace.clear();
         SS.VoxelIndexTrace.clear();
+        SS.FloorTouchTrace.clear();
         SS.VoltageTrace.clear();
         SS.StrainTrace.clear();
         SS.StressTrace.clear();
@@ -1386,8 +1387,11 @@ bool CVX_Sim::UpdateStats(std::string* pRetMessage) //updates simulation state (
         SS.CMTraceTime.push_back( GetCurTime() );
         SS.CMTrace.push_back( GetCM() );
 
+        int numTouchingGround = 0;
+
         for (int i=0; i<NumVox(); i++)
         {
+            if (VoxArray[i].GetCurGroundPenetration() > 0){ numTouchingGround += 1;}
             SS.VoxelIndexTrace.push_back(VoxArray[i].GetNominalPosition());
             SS.VoltageTrace.push_back(VoxArray[i].Voltage);
             SS.StrainTrace.push_back(VoxArray[i].GetMaxBondStrain());
@@ -1398,6 +1402,9 @@ bool CVX_Sim::UpdateStats(std::string* pRetMessage) //updates simulation state (
             SS.PitchTrace.push_back(VoxArray[i].GetPitch());
             SS.YawTrace.push_back(VoxArray[i].GetYaw());
         }
+
+        SS.FloorTouchTrace.push_back(numTouchingGround);
+
 	}
 
 
@@ -1409,8 +1416,11 @@ bool CVX_Sim::UpdateStats(std::string* pRetMessage) //updates simulation state (
             SS.CMTraceTime.push_back( GetCurTime() );
             SS.CMTrace.push_back( GetCM() );
 
+            int numTouchingGround = 0;
+
             for (int i=0; i<NumVox(); i++)
             {
+                if (VoxArray[i].GetCurGroundPenetration() > 0){ numTouchingGround += 1;}
                 SS.VoxelIndexTrace.push_back(VoxArray[i].GetNominalPosition());
                 SS.VoltageTrace.push_back(VoxArray[i].Voltage);
                 SS.StrainTrace.push_back(VoxArray[i].GetMaxBondStrain());
@@ -1421,6 +1431,9 @@ bool CVX_Sim::UpdateStats(std::string* pRetMessage) //updates simulation state (
                 SS.PitchTrace.push_back(VoxArray[i].GetPitch());
                 SS.YawTrace.push_back(VoxArray[i].GetYaw());
             }
+
+            SS.FloorTouchTrace.push_back(numTouchingGround);
+
         }
 	}
 

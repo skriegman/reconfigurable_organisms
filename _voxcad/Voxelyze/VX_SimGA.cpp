@@ -139,28 +139,29 @@ void CVX_SimGA::WriteResultFile(CXML_Rip* pXML, CVX_SimGA* simToCombine)
                     pXML->Element("TraceX",SS.CMTrace[i].x);
                     pXML->Element("TraceY",SS.CMTrace[i].y);
                     pXML->Element("TraceZ",SS.CMTrace[i].z);
+                    pXML->Element("NumTouchingGround",SS.FloorTouchTrace[i]);
                 pXML->UpLevel();
             }
         pXML->UpLevel();
 
-        pXML->DownLevel("SensorMotorData");
-        for(std::vector<vfloat>::size_type i = 0; i != SS.VoxelIndexTrace.size(); ++i)
-        {
-            pXML->DownLevel("Voxel");
-                pXML->Element("X", SS.VoxelIndexTrace[i].x);
-                pXML->Element("Y", SS.VoxelIndexTrace[i].y);
-                pXML->Element("Z", SS.VoxelIndexTrace[i].z);
-                pXML->Element("Voltage", SS.VoltageTrace[i]);
-                pXML->Element("Strain", SS.StrainTrace[i]);
-                pXML->Element("Stress", SS.StressTrace[i]);
-                pXML->Element("Pressure", SS.PressureTrace[i]);
-                pXML->Element("Touch", SS.TouchTrace[i]);
-                pXML->Element("Roll", SS.RollTrace[i]);
-                pXML->Element("Pitch", SS.PitchTrace[i]);
-                pXML->Element("Yaw", SS.YawTrace[i]);
-            pXML->UpLevel();
-        }
-        pXML->UpLevel();
+//        pXML->DownLevel("SensorMotorData");
+//        for(std::vector<vfloat>::size_type i = 0; i != SS.VoxelIndexTrace.size(); ++i)
+//        {
+//            pXML->DownLevel("Voxel");
+//                pXML->Element("X", SS.VoxelIndexTrace[i].x);
+//                pXML->Element("Y", SS.VoxelIndexTrace[i].y);
+//                pXML->Element("Z", SS.VoxelIndexTrace[i].z);
+//                pXML->Element("Voltage", SS.VoltageTrace[i]);
+//                pXML->Element("Strain", SS.StrainTrace[i]);
+//                pXML->Element("Stress", SS.StressTrace[i]);
+//                pXML->Element("Pressure", SS.PressureTrace[i]);
+//                pXML->Element("Touch", SS.TouchTrace[i]);
+//                pXML->Element("Roll", SS.RollTrace[i]);
+//                pXML->Element("Pitch", SS.PitchTrace[i]);
+//                pXML->Element("Yaw", SS.YawTrace[i]);
+//            pXML->UpLevel();
+//        }
+//        pXML->UpLevel();
     }
 
 	pXML->UpLevel();

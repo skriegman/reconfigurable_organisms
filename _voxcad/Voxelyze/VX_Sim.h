@@ -40,6 +40,8 @@ struct SimState { //Information about current simulation state:
 
 	std::vector< Vec3D<vfloat> > VoxelIndexTrace;
 
+    std::vector<vfloat> FloorTouchTrace;
+
 	std::vector<vfloat> VoltageTrace;
 	std::vector<vfloat> StrainTrace;
 	std::vector<vfloat> StressTrace;
