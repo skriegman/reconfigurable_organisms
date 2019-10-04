@@ -56,6 +56,7 @@ def contiguous_tissue_regions(mat):
 
 
 def single_layer_in_xy_plane(mat):
+
     bottom_tissue_type = 0
     for z in range(7):
         if np.sum(mat[:, :, z] > 0) == 0:
@@ -121,7 +122,15 @@ for robot, morphology in material_dict.items():
 
     fails = []
 
-    if not contiguous_tissue_regions(morphology) or not single_layer_in_xy_plane(morphology):
+    good = False
+    rotations = [(0, 1), (0, 2), (1, 2)]
+    for r in rotations:
+        rotated_body = np.rot90(morphology, axes=r)
+        if single_layer_in_xy_plane(rotated_body):
+            good = True
+            break
+
+    if not contiguous_tissue_regions(morphology) or not good:
         fails += ["B1"]
 
     if not gaps_at_least_two_voxels_wide(morphology):
