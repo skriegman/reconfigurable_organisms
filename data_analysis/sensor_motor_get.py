@@ -5,10 +5,10 @@ import numpy as np
 import pandas as pd
 import time
 
-from evosoro.softbot import Genotype, Phenotype
-from evosoro.base import Env
-from evosoro.tools.read_write_voxelyze import write_voxelyze_file
-from evosoro.tools.utils import convert_voxelyze_index, quadruped
+from softbot import Genotype, Phenotype
+from base import Env
+from tools.read_write_voxelyze import write_voxelyze_file
+from tools.utils import convert_voxelyze_index, quadruped
 
 GEN = 1000
 RUNS = 100

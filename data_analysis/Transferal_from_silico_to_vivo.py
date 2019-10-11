@@ -6,10 +6,10 @@ import pandas as pd
 import time
 from scipy.ndimage import gaussian_filter1d
 
-from evosoro.softbot import Genotype, Phenotype
-from evosoro.base import Env
-from evosoro.tools.read_write_voxelyze import write_voxelyze_file
-from evosoro.tools.utils import quadruped
+from softbot import Genotype, Phenotype
+from base import Env
+from tools.read_write_voxelyze import write_voxelyze_file
+from tools.utils import quadruped
 
 import seaborn as sns
 import matplotlib.pyplot as plt

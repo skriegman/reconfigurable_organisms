@@ -3,9 +3,9 @@ import numpy as np
 import os.path
 import subprocess as sub
 
-from evosoro.softbot import Genotype, Phenotype
-from evosoro.tools.read_write_voxelyze import write_voxelyze_file
-from evosoro.tools.utils import quadruped
+from softbot import Genotype, Phenotype
+from tools.read_write_voxelyze import write_voxelyze_file
+from tools.utils import quadruped
 
 NUM_RUNS = 5
 RUNS = np.random.randint(1, 100, NUM_RUNS)

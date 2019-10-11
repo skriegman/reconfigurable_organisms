@@ -13,8 +13,8 @@ sns.set_style("white")
 sns.set_palette("husl", 7)
 
 import cPickle
-from evosoro.softbot import Genotype, Phenotype
-from evosoro.tools.utils import sigmoid
+from softbot import Genotype, Phenotype
+from tools.utils import sigmoid
 
 np.random.seed(1)
 

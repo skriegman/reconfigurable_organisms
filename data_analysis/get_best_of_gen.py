@@ -5,7 +5,7 @@ import os
 
 sys.path.append(os.getcwd() + "/../..")
 
-from evosoro.tools.data_analysis import get_all_data, combine_experiments
+from tools.data_analysis import get_all_data, combine_experiments
 
 
 def make_plot(_lambda, experiment_names):

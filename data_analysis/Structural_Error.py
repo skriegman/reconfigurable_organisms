@@ -13,7 +13,7 @@ import scipy.misc
 from scipy import ndimage
 from sklearn.cluster import KMeans
 from scipy.signal import correlate2d
-from evosoro.tools.utils import hausdorff_dist
+from tools.utils import hausdorff_dist
 
 matplotlib.rcParams['pdf.fonttype'] = 42
 matplotlib.rcParams['ps.fonttype'] = 42

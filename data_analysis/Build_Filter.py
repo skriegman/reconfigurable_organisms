@@ -1,8 +1,8 @@
 import cPickle
 import numpy as np
 from collections import OrderedDict
-from evosoro.softbot import Genotype, Phenotype
-from evosoro.tools.utils import make_one_shape_only, get_neighbors
+from softbot import Genotype, Phenotype
+from tools.utils import make_one_shape_only, get_neighbors
 
 np.random.seed(1)
 

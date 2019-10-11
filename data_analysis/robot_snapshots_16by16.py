@@ -3,8 +3,8 @@ import numpy as np
 import os.path
 import subprocess as sub
 
-from evosoro.softbot import Genotype, Phenotype
-from evosoro.tools.utils import quadruped, make_material_tree
+from softbot import Genotype, Phenotype
+from tools.utils import quadruped, make_material_tree
 
 import seaborn as sns
 import matplotlib.pyplot as plt
