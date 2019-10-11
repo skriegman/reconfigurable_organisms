@@ -613,8 +613,8 @@ vfloat CVXS_Voxel::GetCurGroundPenetration() //how far into the ground penetrati
 	vfloat floorSlope = pSim->pEnv->GetFloorSlope()*PI/180.0;
 	vfloat zFloor = Pos.x*tan(floorSlope);
 
-//	vfloat Penetration = 0.5*Scale - Pos.z + zFloor;
-	vfloat Penetration = zFloor - Pos.z;
+	vfloat Penetration = 0.5*Scale - Pos.z + zFloor;
+//	vfloat Penetration = zFloor - Pos.z;
 	return Penetration <= 0 ? 0 : Penetration;
 }
 

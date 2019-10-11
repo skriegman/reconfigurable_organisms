@@ -63,3 +63,6 @@ MANIFEST
 .idea
 _voxcad*/GeneratedFiles
 
+
+
+*.o
