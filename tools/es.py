@@ -1,3 +1,8 @@
+"""
+This code was forked directly from https://github.com/hardmaru/estool
+
+
+"""
 import numpy as np
 
 
