@@ -4,6 +4,7 @@ import sys
 import numpy as np
 import subprocess as sub
 from functools import partial
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from base import Sim, Env, ObjectiveDict
 from networks import CPPN, DirectEncoding
@@ -14,7 +15,7 @@ from tools.utils import make_material_tree, count_occurrences
 
 
 # sub.call("cp ~/pkg/public_repo/evosoro/_voxcad_land_water/voxelyzeMain/voxelyze .", shell=True)
-sub.call("cp ~/tmp/research_code/evosoro/_voxcad/voxelyzeMain/voxelyze .", shell=True)
+sub.call("cp " + os.path.abspath(os.path.join(os.path.dirname(__file__), "..")) + "/_voxcad/voxelyzeMain/voxelyze .", shell=True)
 sub.call("chmod 755 voxelyze", shell=True)
 
 SEED = int(sys.argv[1])
